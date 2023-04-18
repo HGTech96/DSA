@@ -5,7 +5,11 @@ public class LinkedList {
     private Node tail;
     private int length;
 
-
+    public LinkedList() {
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
+    }
 
     public LinkedList(int value) {
         Node node = new Node(value);
@@ -69,5 +73,16 @@ public class LinkedList {
         }
 
         return temp;
+    }
+
+    public void prepend(int value) {
+        Node newItem = new Node(value);
+        if (head == null && tail == null) {
+            head = newItem;
+            tail = newItem;
+        } else {
+            newItem.next = head;
+            head = newItem;
+        }
     }
 }
