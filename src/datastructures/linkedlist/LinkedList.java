@@ -28,6 +28,12 @@ public class LinkedList {
         System.out.println();
     }
 
+    public void getInfo() {
+        getHead();
+        getTail();
+        getLength();
+    }
+
     public void getHead() {
         System.out.println("Head: " + head.value);
     }
@@ -85,5 +91,17 @@ public class LinkedList {
             head = newItem;
         }
         length++;
+    }
+
+    public Node removeFirst() {
+        if (length == 0) return null;
+        Node temp = head;
+        head = head.next;
+        temp.next = null;
+        length--;
+        if (length == 0) {
+            tail = null;
+        }
+        return temp;
     }
 }

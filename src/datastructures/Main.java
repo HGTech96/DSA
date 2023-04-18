@@ -25,7 +25,12 @@ public class Main {
 
         ll.prepend(7);
         ll.printList();
-
+//        ll.append(4);
+//        ll.printList();
+        ll.getInfo();
+        ll.removeFirst();
+        ll.printList();
+        ll.getLength();
 
     }
 }
