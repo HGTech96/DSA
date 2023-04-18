@@ -84,5 +84,6 @@ public class LinkedList {
             newItem.next = head;
             head = newItem;
         }
+        length++;
     }
 }
