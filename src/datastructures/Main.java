@@ -8,29 +8,12 @@ public class Main {
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
-//        ll.getHead();
-//        ll.getTail();
-//        ll.getLength();
-//
-//        ll.printList();
-//        Node poppedItem = ll.pop();
-//        System.out.println(poppedItem.value);
-//        ll.printList();
-//
-//        ll.append(5);
-//        ll.printList();
-//
-//        ll.append(6);
-//        ll.printList();
-
-        ll.prepend(7);
+        ll.append(5);
+        ll.prepend(14);
+        ll.append(2);
         ll.printList();
-//        ll.append(4);
-//        ll.printList();
-        ll.getInfo();
-        ll.removeFirst();
+        ll.set(0, 1);
         ll.printList();
-        ll.getLength();
 
     }
 }
