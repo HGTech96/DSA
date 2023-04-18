@@ -16,6 +16,8 @@ public class Main {
         ll.printList();
         ll.insert(0, 15);
         ll.printList();
+        ll.pop(0);
+        ll.printList();
 
     }
 }
