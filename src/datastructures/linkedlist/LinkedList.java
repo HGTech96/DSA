@@ -81,6 +81,20 @@ public class LinkedList {
         return temp;
     }
 
+    public Node pop(int index) {
+        if (index < 0 || index >= length) return null;
+        if (index == 0) return removeFirst();
+        if (index == length - 1) return pop();
+
+        Node prev = get(index - 1);
+        Node temp = prev.next;
+
+        prev.next = temp.next;
+        temp.next = null;
+        length--;
+        return temp;
+    }
+
     public void prepend(int value) {
         Node newItem = new Node(value);
         if (head == null && tail == null) {
@@ -147,19 +161,7 @@ public class LinkedList {
         return true;
     }
 
-    public Node pop(int index) {
-        if (index < 0 || index >= length) return null;
-        if (index == 0) return removeFirst();
-        if (index == length - 1) return pop();
 
-        Node prev = get(index - 1);
-        Node temp = prev.next;
-
-        prev.next = temp.next;
-        temp.next = null;
-        length--;
-        return temp;
-    }
 
     public void reverse() {
         Node temp = head;
@@ -172,6 +174,38 @@ public class LinkedList {
             temp.next = before;
             before = temp;
             temp = after;
+        }
+    }
+
+    public Node findMiddleNode() {
+        if (head.next == null) {
+            return head;
+        }
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
+    public void removeDuplicates() {
+        if (length == 0) return;
+        Node temp_i = head;
+        while (temp_i != null) {
+            Node temp_j = temp_i.next;
+            Node prev = temp_i;
+            while (temp_j != null) {
+                if (temp_j.value == temp_i.value) {
+                    temp_j = temp_j.next;
+                    prev.next = temp_j;
+                } else {
+                    temp_j = temp_j.next;
+                    prev = prev.next;
+                }
+            }
+            temp_i = temp_i.next;
         }
     }
 

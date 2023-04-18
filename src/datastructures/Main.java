@@ -7,17 +7,18 @@ import datastructures.linkedlist.Node;
 public class Main {
 
     public static void main(String[] args) {
-        LinkedList ll = new LinkedList();
-        ll.append(5);
-//        ll.prepend(14);
-//        ll.append(2);
-        ll.printList();
-        ll.set(0, 1);
+        LinkedList myLinkedList = new LinkedList(1);
 
-        ll.insert(0, 15);
-        ll.append(5);
-        ll.printList();
-        ll.reverse();
-        ll.printList();
+        myLinkedList.append(1);
+        myLinkedList.append(2);
+        myLinkedList.append(2);
+        myLinkedList.append(3);
+        myLinkedList.append(3);
+        myLinkedList.append(3);
+        myLinkedList.append(4);
+
+        myLinkedList.removeDuplicates();
+
+        myLinkedList.printList();
     }
 }
